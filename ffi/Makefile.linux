@@ -19,7 +19,7 @@ all: $(OUTPUT)
 $(OUTPUT): $(SRC) $(INCLUDE)
 	# static-libstdc++ avoids runtime dependencies on a
 	# particular libstdc++ version.
-	$(CXX) -static-libstdc++ -shared $(CXXFLAGS) $(SRC) -o $(OUTPUT) $(LDFLAGS) $(LIBS)
+	$(CXX) -static-libstdc++ -shared -fPIC -fpic $(CXXFLAGS) $(SRC) -o $(OUTPUT) $(LDFLAGS) $(LIBS)
 
 clean:
 	rm -rf test $(OUTPUT)
